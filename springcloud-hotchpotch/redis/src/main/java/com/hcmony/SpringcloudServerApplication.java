@@ -15,7 +15,6 @@ import org.springframework.context.annotation.ImportResource;
 @MapperScan(basePackages = "com/hcmony/mapper")
 @ImportResource({"classpath:application-hcmony.xml"})
 public class SpringcloudServerApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(SpringcloudServerApplication.class, args);
 	}

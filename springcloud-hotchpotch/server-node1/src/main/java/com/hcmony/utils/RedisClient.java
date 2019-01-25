@@ -1,4 +1,3 @@
-
 package com.hcmony.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,11 +5,9 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
 /**
  * 类RedisClient.java的实现描述：TODO 类实现描述
  *
@@ -227,7 +224,6 @@ public class RedisClient {
             e.printStackTrace();
         } finally {
             // 返还到连接池
-
             if (jedis != null) {
                 jedis.close();
             }
@@ -252,7 +248,6 @@ public class RedisClient {
             e.printStackTrace();
         } finally {
             // 返还到连接池
-
             if (jedis != null) {
                 jedis.close();
             }

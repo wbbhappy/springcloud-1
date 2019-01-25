@@ -11,19 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.Map;
 import java.util.Set;
 
-/**
- * @FileName package com.hcmony.controller.RedisController.java
- * @Creator hcmony
- * @Created 2017-09-13 19:13:00
- * @Modifier hcmony
- * @Updated 2017-09-13 19:13:00
- * @Description
- * @Version BUILD1001
- */
 @EnableAutoConfiguration
 @RefreshScope
 @RestController
@@ -68,8 +58,6 @@ public class RedisController {
 							  @RequestParam(required = true, name = "value") Object value) {
 		redisService.setObject( key, value);
 	}
-
-
 
 	@ApiOperation(value = "设置String对象，不指定缓存时间", notes = "")
 	@RequestMapping(value = "/set",method = RequestMethod.POST)
@@ -124,7 +112,6 @@ public class RedisController {
 		redisService.delByKeys(redisKey);
 	}
 
-
 	/**
 	 * 方法描述:redis HyperLogLog输入元素
 	 * @param key
@@ -177,8 +164,6 @@ public class RedisController {
 		return redisService.getPfcountByKeys(redisKey);
 	}
 
-
-
 	/**
 	 * 方法描述:设置对象
 	 *
@@ -199,6 +184,4 @@ public class RedisController {
 	public boolean delObject(String key) {
 		return redisService.delObject( key);
 	}
-
-
 }

@@ -6,11 +6,9 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
 /**
  * 类RedisClient.java的实现描述：TODO 类实现描述
  *
@@ -21,7 +19,6 @@ public class RedisClient {
 
     @Autowired
     private JedisPool jedisPool;
-
     /**
      * 方法描述:设置对象
      *
@@ -44,7 +41,6 @@ public class RedisClient {
             }
         }
     }
-
     /**
      * 方法描述:设置key过期时间
      * 
@@ -66,7 +62,6 @@ public class RedisClient {
             }
         }
     }
-
     /**
      * 方法描述:Redis INCR命令用于将键的整数值递增1。如果键不存在，则在执行操作之前将其设置为0。 如果键包含错误类型的值或包含无法表示为整数的字符串，则会返回错误。此操作限于64位有符号整数
      * 
@@ -87,7 +82,6 @@ public class RedisClient {
             }
         }
     }
-
     /**
      * 方法描述:查找所有匹配给定的模式的键
      * 
@@ -117,7 +111,6 @@ public class RedisClient {
             }
         }
     }
-
     /**
      * 方法描述:删除所有匹配给定的模式的键
      * 
@@ -144,7 +137,6 @@ public class RedisClient {
             }
         }
     }
-
     /**
      * 方法描述:设置key的有效期
      * 
@@ -166,7 +158,6 @@ public class RedisClient {
             }
         }
     }
-
     /**
      * 方法描述:设置对象
      *
@@ -190,7 +181,6 @@ public class RedisClient {
             }
         }
     }
-
     /**
      * 方法描述:获取对象
      *
@@ -214,7 +204,6 @@ public class RedisClient {
             }
         }
     }
-
     /**
      * 方法描述:设置对象
      *
@@ -238,9 +227,6 @@ public class RedisClient {
             }
         }
     }
-
-
-
     /**
      * 方法描述:删除元素
      * 
@@ -267,7 +253,6 @@ public class RedisClient {
             }
         }
     }
-
     /**
      * 方法描述:redis HyperLogLog输入元素
      * 
@@ -289,7 +274,6 @@ public class RedisClient {
             }
         }
     }
-
     /**
      * 方法描述:统计key在HyperLogLog中的基数 </br>
      * 基数：集合中不同元素的数量。比如 {‘apple’, ‘banana’, ‘cherry’, ‘banana’, ‘apple’} 的基数就是 3</br>
@@ -314,7 +298,6 @@ public class RedisClient {
         }
         return 0;
     }
-
     /**
      * 方法描述:模糊查询指定的键，返回键的集合
      * 
@@ -337,7 +320,6 @@ public class RedisClient {
             }
         }
     }
-
     /**
      * 方法描述:查找所有匹配给定的模式的键并统计所有键的基数
      * 
@@ -367,9 +349,6 @@ public class RedisClient {
             }
         }
     }
-
-
-
     /**
      * 方法描述:设置对象
      *
@@ -393,11 +372,6 @@ public class RedisClient {
             }
         }
     }
-
-    //-----------------------------------------------------------------------------------------------------------------
-
-
-
     /**
      * @description
      * @author hcmony
@@ -407,7 +381,6 @@ public class RedisClient {
      * @return java.util.Set<java.lang.String>
      */
     public Set<String> getKeysSet(String redisKey,Integer dbIndex){
-
         Jedis jedis = null;
         try {
             jedis = jedisPool.getResource();
@@ -426,7 +399,6 @@ public class RedisClient {
             }
         }
     }
-
     /**
      * @description
      * @author hcmony
@@ -437,7 +409,6 @@ public class RedisClient {
      * @return void
      */
     public void sadd(String key,String value,Integer dbIndex){
-
         Jedis jedis = null;
         try {
             jedis = jedisPool.getResource();
@@ -450,7 +421,6 @@ public class RedisClient {
             jedis.close();
         }
     }
-
     /**
      * @description
      * @author hcmony
@@ -460,7 +430,6 @@ public class RedisClient {
      * @return java.util.Set<java.lang.String>
      */
     public Set<String> smembers(String key,Integer dbIndex){
-
         Jedis jedis = null;
         try {
             jedis = jedisPool.getResource();
@@ -473,7 +442,6 @@ public class RedisClient {
             jedis.close();
         }
     }
-
     /**
      * @description 根据db设置对象
      * @author hcmony
@@ -484,7 +452,6 @@ public class RedisClient {
      * @return void
      */
     public void setByDbIndex(String key, Integer dbIndex, String value) {
-
         Jedis jedis = null;
         try {
             jedis = jedisPool.getResource();
@@ -501,8 +468,6 @@ public class RedisClient {
             }
         }
     }
-
-
     /**
      * @description 根据db获取对象
      * @author hcmony
@@ -512,7 +477,6 @@ public class RedisClient {
      * @return java.lang.String
      */
     public String getByDbIndex(String key, Integer dbIndex) {
-
         Jedis jedis = null;
         try {
             jedis = jedisPool.getResource();

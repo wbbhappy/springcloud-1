@@ -6,9 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Created by hcmony on 2017/9/5.
- */
 @RestController
 public class TestController {
 
@@ -20,5 +17,4 @@ public class TestController {
 	public String test(){
 		return "server被调用了！:" +port;
 	}
-
 }

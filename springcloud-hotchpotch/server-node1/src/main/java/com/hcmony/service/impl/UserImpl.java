@@ -10,9 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Created by hcmony on 2017/9/5.
- */
 @Service
 public class UserImpl implements UserService1 {
 
@@ -22,7 +19,6 @@ public class UserImpl implements UserService1 {
 	private UserMapper userMapper;
 
 	@Transactional(propagation = Propagation.NESTED,rollbackFor = Exception.class)
-	@Override
 	public Integer saveUser(User user) throws Exception {
 		System.out.println("saveUserTwo--------------");
 		try {
@@ -36,7 +32,6 @@ public class UserImpl implements UserService1 {
 		return null;
 	}
 
-	@Override
 	public User findUser(Integer id) {
 		return null;
 	}

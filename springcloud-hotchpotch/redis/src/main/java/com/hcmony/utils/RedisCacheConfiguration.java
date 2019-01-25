@@ -51,8 +51,5 @@ public class RedisCacheConfiguration extends CachingConfigurerSupport {
         }else {
             return new JedisPool(jedisPoolConfig, host, port, timeout);
         }
-
-
     }
-
 }

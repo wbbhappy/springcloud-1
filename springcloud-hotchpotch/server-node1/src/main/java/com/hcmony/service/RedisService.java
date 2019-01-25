@@ -4,19 +4,9 @@ import com.hcmony.utils.RedisClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-
 import java.util.Map;
 import java.util.Set;
 
-/**
- * @FileName package com.hcmony.service.RedisService.java
- * @Creator hcmony
- * @Created 2017-09-13 19:18:00
- * @Modifier hcmony
- * @Updated 2017-09-13 19:18:00
- * @Description
- * @Version BUILD1001
- */
 @Service
 public class RedisService {
 

@@ -1,7 +1,6 @@
 package com.hcmony.utils;
 
 import java.io.*;
-
 /**
  * @author hcmony 2015年11月12日 下午2:56:35
  * @ClassName SerializableUtil.java

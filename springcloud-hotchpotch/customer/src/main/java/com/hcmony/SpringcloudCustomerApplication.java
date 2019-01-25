@@ -10,7 +10,6 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @EnableDiscoveryClient
 @SpringBootApplication
 public class SpringcloudCustomerApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(SpringcloudCustomerApplication.class, args);
 	}

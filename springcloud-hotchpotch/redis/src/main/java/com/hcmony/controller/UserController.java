@@ -1,5 +1,4 @@
 package com.hcmony.controller;
-
 import com.hcmony.model.User;
 import com.hcmony.service.UserService;
 import com.hcmony.utils.CodeIdEnum;
@@ -13,13 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Created by hcmony on 2017/9/1.
- */
 @EnableAutoConfiguration
 @RefreshScope
 @RestController
@@ -61,5 +56,4 @@ public class UserController {
 		List<User> list= userService.findAll();
 		return new ResponseData(CodeIdEnum.Success,list);
 	}
-
 }

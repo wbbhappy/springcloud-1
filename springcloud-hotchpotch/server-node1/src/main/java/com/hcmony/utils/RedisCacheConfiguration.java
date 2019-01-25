@@ -48,7 +48,5 @@ public class RedisCacheConfiguration extends CachingConfigurerSupport {
         // spring.redis.isrds：是否rds线上，线上1需要密码，线下0不需要密码
 
         return new JedisPool(jedisPoolConfig, host, port, timeout, password, database);
-
     }
-
 }

@@ -22,7 +22,7 @@ public class UserController {
 	@RequestMapping("/findUser")
 	public ResponseData findUser(Integer id){
 		System.out.println("-----------------");
-		User user = userService.findUser(id);
+		User user = userService.findUser(30);
 		System.out.println("user的id是："+user.getId());
 		System.out.println("user的名字是："+user.getName());
 		return new ResponseData(CodeIdEnum.Success,user);

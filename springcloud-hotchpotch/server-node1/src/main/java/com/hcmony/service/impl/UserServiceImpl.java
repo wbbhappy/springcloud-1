@@ -9,12 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
-/**
- * Created by hcmony on 2017/9/1.
- */
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -89,6 +85,4 @@ public class UserServiceImpl implements UserService {
 		}
 		return  null;
 	}
-
-
 }

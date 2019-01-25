@@ -9,12 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
-/**
- * Created by hcmony on 2017/9/1.
- */
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -32,14 +28,12 @@ public class UserServiceImpl implements UserService {
 		try {
 			logger.info("保存用户:"+user.getName());
 			//userImpl.saveUser(user);
-
 			/*new Thread(new Runnable()  {
 				@Override
 				public void run() {
 					try {
 						userImpl.saveUser(user);
 					}catch (Exception e){
-
 					}
 				}
 			}).start();*/
@@ -65,9 +59,8 @@ public class UserServiceImpl implements UserService {
 			logger.error("saveUserTwo 保存用户失败");
 			throw new ExceptionRuntime();
 		}
-
 	}
-	@Override
+
 	public User findUser(Integer id) {
 		try {
 			return userMapper.findById(id);
@@ -76,7 +69,7 @@ public class UserServiceImpl implements UserService {
 		}
 		return null;
 	}
-	@Override
+
 	public List<User> findAll(){
 		try {
 			return  userMapper.findAll();
@@ -85,6 +78,4 @@ public class UserServiceImpl implements UserService {
 		}
 		return  null;
 	}
-
-
 }

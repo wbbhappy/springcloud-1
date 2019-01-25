@@ -2,9 +2,6 @@ package com.hcmony.utils;
 
 import java.io.Serializable;
 
-/**
- * Created by hcmony on 2017/9/5.
- */
 public class ExceptionRuntime extends RuntimeException implements Serializable{
 
 	static final long serialVersionUID = -7034897190355766939L;
