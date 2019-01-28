@@ -1,4 +1,4 @@
-package com.hcmony;
+package com.hcmony.test;
 
 import java.lang.annotation.Annotation;
 

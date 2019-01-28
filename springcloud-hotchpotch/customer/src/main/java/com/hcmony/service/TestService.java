@@ -1,4 +1,4 @@
-package com.hcmony;
+package com.hcmony.service;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

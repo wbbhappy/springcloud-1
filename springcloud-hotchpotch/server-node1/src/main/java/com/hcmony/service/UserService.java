@@ -4,7 +4,8 @@ import com.hcmony.model.User;
 import java.util.List;
 
 public interface UserService {
-	public Integer saveUser(User user)throws Exception;
-	public User findUser(Integer id);
 	public List<User> findAll();
+	public User findUser(Integer id);
+	public void saveUser()throws Exception;
+	public Integer saveUsers(User user)throws Exception;
 }

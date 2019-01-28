@@ -19,14 +19,25 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserMapper userMapper;
 
-	@Autowired
-	private UserImpl userImpl;
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void saveUser(User user) throws Exception{
+		try {
+			user.setId(22);
+			user.setName("失败的");
+			userMapper.save(user);
+		}catch(RuntimeException e) {
+			logger.error("保存用户失败");
+			throw new ExceptionRuntime();
+		}catch(Exception e){
+			logger.error("保存用户失败");
+			throw new Exception();
+		}
+	}
 
 	@Transactional(propagation = Propagation.REQUIRED)
-	@Override
-	public Integer saveUser(User user) throws Exception{
+	public Integer saveUsers(User user) throws Exception{
 		try {
-			logger.info("保存用户:"+user.getName());
+			logger.info("保存用户:" + user.getName());
 			//userImpl.saveUser(user);
 			/*new Thread(new Runnable()  {
 				@Override
@@ -37,8 +48,7 @@ public class UserServiceImpl implements UserService {
 					}
 				}
 			}).start();*/
-			Integer num = userMapper.save(user);
-			user.setName("失败前的"+user.getName());
+			Integer num = userMapper.saves(user);
 			return num;
 		}catch(RuntimeException e) {
 			logger.error("保存用户失败");
@@ -46,18 +56,6 @@ public class UserServiceImpl implements UserService {
 		}catch(Exception e){
 			logger.error("保存用户失败");
 			throw new Exception();
-		}
-	}
-	@Transactional(propagation = Propagation.NESTED)
-	public void saveUserTwo(){
-		try {
-			User user = new User();
-			user.setId(22);
-			user.setName("失败的");
-			userMapper.save(user);
-		}catch (ExceptionRuntime e){
-			logger.error("saveUserTwo 保存用户失败");
-			throw new ExceptionRuntime();
 		}
 	}
 

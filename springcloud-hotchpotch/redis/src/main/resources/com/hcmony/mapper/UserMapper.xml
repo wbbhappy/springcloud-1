@@ -20,6 +20,11 @@
     values (#{id}, #{name})
   </insert>
 
+  <insert id="saves"  parameterType="com.hcmony.model.User">
+    insert into user (id, name)
+    values (#{id}, #{name})
+  </insert>
+
   <select id="findAll" resultMap="resultMap">
     select
     <include refid="sql" />

@@ -23,6 +23,11 @@ public class RedisController {
 	@Autowired
 	private RedisService redisService;
 
+	/**
+	 * http://localhost:8762/redis?key=test&seconds=10
+	 * @param key
+	 * @param seconds
+     */
 	@ApiOperation(value = "设置key的有效期", notes = "")
 	@RequestMapping(value = "/expire",method = RequestMethod.POST)
 	public void expire(@ApiParam(required = true, name = "key", value = "123456")
@@ -32,6 +37,12 @@ public class RedisController {
 		redisService.expire( key,seconds);
 	}
 
+	/**
+	 * http://localhost:8762/redis?key=test&seconds=10&value=wbb
+	 * @param key
+	 * @param seconds
+	 * @param value
+     */
 	@ApiOperation(value = "设置String对象，缓存时间", notes = "")
 	@RequestMapping(value = "/setSecondsValue",method = RequestMethod.POST)
 	public void set(@ApiParam(required = true, name = "key", value = "123456")

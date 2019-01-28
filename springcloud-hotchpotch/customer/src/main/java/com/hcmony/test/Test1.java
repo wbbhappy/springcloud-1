@@ -1,4 +1,4 @@
-package com.hcmony;
+package com.hcmony.test;
 
 public class Test1 {
 	private int id;
