@@ -7,9 +7,11 @@
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
+
   <sql id="sql" >
     id, name
   </sql>
+
   <select id="findById" resultType="com.hcmony.model.User" parameterType="java.lang.Integer" >
     select 
     <include refid="sql" />

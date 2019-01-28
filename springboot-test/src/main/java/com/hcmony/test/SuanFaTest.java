@@ -1,14 +1,5 @@
 package com.hcmony.test;
 
-/**
- * @FileName package com.hcmony.test.SuanFaTest.java
- * @Creator hcmony
- * @Created 2017-10-23 17:03:00
- * @Modifier hcmony
- * @Updated 2017-10-23 17:03:00
- * @Description
- * @Version BUILD1001
- */
 public class SuanFaTest {
 
 	public static void main(String[] args) {

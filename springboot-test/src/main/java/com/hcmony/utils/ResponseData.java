@@ -1,11 +1,7 @@
-
 package com.hcmony.utils;
 
 import java.io.Serializable;
 
-/**
- * @author: hcmony  Date: 2015/7/21 Time: 12:27
- */
 public class ResponseData implements Serializable {
     /**
      * 返回码 not http响应码
@@ -20,23 +16,18 @@ public class ResponseData implements Serializable {
     public int getCodeId() {
         return codeId;
     }
-
     public void setCodeId(int codeId) {
         this.codeId = codeId;
     }
-
     public String getCodeDes() {
         return codeDes;
     }
-
     public void setCodeDes(String codeDes) {
         this.codeDes = codeDes;
     }
-
     public Object getResData() {
         return resData;
     }
-
     public void setResData(Object resData) {
         this.resData = resData;
     }

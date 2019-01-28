@@ -6,13 +6,9 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.context.MessageSourceAware;
 import org.springframework.context.ResourceLoaderAware;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by hcmony on 2017/9/8.
- */
 public class ForTest {
 	int id ;
 	String  name ;
@@ -20,15 +16,12 @@ public class ForTest {
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -46,7 +39,6 @@ public class ForTest {
 		}
 		System.out.println(ss);
 		return ss;
-
 	}
 
 	BeanNameAware beanNameAware;

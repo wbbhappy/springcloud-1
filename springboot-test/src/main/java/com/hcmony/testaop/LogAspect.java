@@ -3,14 +3,10 @@ package com.hcmony.testaop;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
-
 import java.lang.reflect.Method;
-import java.util.Collection;
-
 /**
  * @FileName package com.hcmony.testaop.LogAspect.java
  * @Creator hcmony
@@ -33,7 +29,6 @@ public class LogAspect {
 		Method method = signature.getMethod();
 		Action action = method.getAnnotation(Action.class);
 		String[] s = signature.getParameterNames();
-
 		/**
 		 * System.out.println("classname:" + targetMethod.getDeclaringClass().getName());
 		 System.out.println("superclass:" + targetMethod.getDeclaringClass().getSuperclass().getName());

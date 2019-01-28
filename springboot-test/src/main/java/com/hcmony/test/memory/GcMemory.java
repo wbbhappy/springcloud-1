@@ -3,7 +3,6 @@ package com.hcmony.test.memory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
 /**
  * <h3>Shenjue.java基本描述</h3>
  * <p>
@@ -19,9 +18,7 @@ import java.util.UUID;
  * @since V1.0.0, 2018/09/04 14:42
  */
 public class GcMemory {
-
 	private static List<User> userList = new ArrayList<User>();
-
 	public static void main(String[] args) {
 		while (true){
 			int i = 0 ;

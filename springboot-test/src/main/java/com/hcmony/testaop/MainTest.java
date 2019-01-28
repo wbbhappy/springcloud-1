@@ -1,7 +1,6 @@
 package com.hcmony.testaop;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 /**
  * @FileName package com.hcmony.testaop.MainTest.java
  * @Creator hcmony
@@ -13,20 +12,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class MainTest {
 	public static void main(String[] args) {
-		AnnotationConfigApplicationContext
-				context = new AnnotationConfigApplicationContext(AopConfig.class);
-
-
-		DemoAnnotationService demoAnnotationService =
-				context.getBean(DemoAnnotationService.class);
-
-		/*DemoMethodService demoMethodService =
-				context.getBean(DemoMethodService.class);*/
-
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AopConfig.class);
+		DemoAnnotationService demoAnnotationService = context.getBean(DemoAnnotationService.class);
+		/*DemoMethodService demoMethodService =	context.getBean(DemoMethodService.class);*/
 		demoAnnotationService.add("参数是：ss");
-
 		//demoMethodService.add();
-
 		context.close();
 	}
 }

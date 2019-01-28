@@ -1,8 +1,5 @@
 package com.hcmony.test;
 
-import java.util.Hashtable;
-import java.util.concurrent.ConcurrentHashMap;
-
 /**
  * Synchronized 测试类
  * Created by hcmony on 2017/9/6.
@@ -11,11 +8,9 @@ public class SynchronizedTest {
 	public static class Counter implements Runnable {
 		protected  long count = 0;
 
-		@Override
 		public void run() {
 			add();
 		}
-
 
 		public  void add(){
 			synchronized (this) {
@@ -35,9 +30,7 @@ public class SynchronizedTest {
 		System.out.println("==============================");
 		Thread.sleep(1000);
 		System.out.println(counter.count);
-
 	}
-
 
 	static  class Myclass implements Runnable{
 		int i = 0;
@@ -53,7 +46,6 @@ public class SynchronizedTest {
 			}
 		}
 
-		@Override
 		public void run() {
 			test1();
 			test2();
@@ -64,10 +56,8 @@ public class SynchronizedTest {
 			for (int i = 0; i < 1000; i++) {
 				new Thread(myclass).start();
 			}
-
 			Thread.sleep(1000);
 			System.out.println(myclass.i);
 		}
 	}
-
 }

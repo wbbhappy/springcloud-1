@@ -10,11 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.LinkedHashMap;
-
-/**
- * Created by hcmony on 2017/9/1.
- */
 @Service()
 public class UserServiceImpl implements UserService {
 
@@ -23,18 +18,20 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserMapper userMapper;
 
-	@Autowired
-	private UserImpl userImpl;
+	public User findUser(Integer id) {
+		try {
+			return userMapper.findById(id);
+		}catch (Exception e){
+			logger.error("查询用户失败",e);
+		}
+		return null;
+	}
 
 	@Transactional(propagation = Propagation.REQUIRED)
-	@Override
 	public Integer saveUser(User user) throws Exception{
 		try {
-			logger.info("保存用户:"+user.getName());
-			//userImpl.saveUser(user);
-
-			new Thread(new Runnable()  {
-				@Override
+			logger.info("保存用户:" + user.getName());
+			/*new Thread(new Runnable()  {
 				public void run() {
 					try {
 						userImpl.saveUser(user);
@@ -42,12 +39,10 @@ public class UserServiceImpl implements UserService {
 
 					}
 				}
-			}).start();
-
-			user.setId(27);
+			}).start();*/
+			user.setId(77);
+			user.setName("你好");
 			Integer num = userMapper.save(user);
-			user.setName("失败前的"+user.getName());
-			System.out.println("saveUser--------------");
 			return num;
 		}catch(RuntimeException e) {
 			logger.error("保存用户失败");
@@ -56,28 +51,5 @@ public class UserServiceImpl implements UserService {
 			logger.error("保存用户失败");
 			throw new Exception();
 		}
-	}
-	@Transactional(propagation = Propagation.NESTED)
-	public void saveUserTwo(){
-		System.out.println("saveUserTwo--------------");
-		try {
-			User user = new User();
-			user.setId(22);
-			user.setName("失败的");
-			userMapper.save(user);
-		}catch (ExceptionRuntime e){
-			logger.error("saveUserTwo 保存用户失败");
-			throw new ExceptionRuntime();
-		}
-
-	}
-	@Override
-	public User findUser(Integer id) {
-		try {
-			return userMapper.findById(id);
-		}catch (Exception e){
-			logger.error("查询用户失败",e);
-		}
-		return null;
 	}
 }

@@ -1,14 +1,12 @@
 package com.hcmony.utils;
 
 import java.io.*;
-
 /**
  * @author hcmony 2015年11月12日 下午2:56:35
  * @ClassName SerializableUtil.java
  * @Description 类实现描述: 序列化和反序列化
  */
 public class SerializableUtil {
-
     /**
      * 将对象序列化为byte[]
      *

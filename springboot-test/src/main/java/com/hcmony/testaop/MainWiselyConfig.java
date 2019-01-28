@@ -1,7 +1,6 @@
 package com.hcmony.testaop;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 /**
  * @FileName package com.hcmony.testaop.MainWiselyConfig.java
  * @Creator hcmony
@@ -13,8 +12,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class MainWiselyConfig {
 	public static void main(String[] args) {
-		AnnotationConfigApplicationContext
-				context = new AnnotationConfigApplicationContext(DemoConfig.class);
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DemoConfig.class);
 		DemoService demoService = context.getBean(DemoService.class);
 		demoService.outputResult();
 		context.close();

@@ -2,8 +2,6 @@ package com.hcmony.test.memory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-
 /**
  * <h3>Shenjue.java基本描述</h3>
  * <p>
@@ -19,10 +17,9 @@ import java.util.UUID;
  * @since V1.0.0, 2018/09/04 14:44
  */
 public class HeapSpaceMemory {
-
 	public static void main(String[] args) {
 		List<byte[]> list = new ArrayList<>();
-		int i=0;
+		int i = 0;
 		while(true){
 			list.add(new byte[5*1024*1024]);
 			System.out.println("分配次数："+(++i));

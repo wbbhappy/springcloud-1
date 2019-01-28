@@ -2,9 +2,7 @@ package com.hcmony.testaop;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
 import java.lang.annotation.*;
-
 /**
  * @FileName package com.hcmony.testaop.WiselyConfiguration.java
  * @Creator hcmony

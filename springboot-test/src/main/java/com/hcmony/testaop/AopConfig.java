@@ -3,7 +3,6 @@ package com.hcmony.testaop;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-
 /**
  * @FileName package com.hcmony.testaop.AopConfig.java
  * @Creator hcmony

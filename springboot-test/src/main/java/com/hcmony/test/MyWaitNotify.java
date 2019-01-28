@@ -1,7 +1,5 @@
 package com.hcmony.test;
 
-import java.util.concurrent.locks.Lock;
-
 /**
  * Wait 与 Notify 与线程之间的通信 测试类
  * Created by hcmony on 2017/9/6.
@@ -40,7 +38,6 @@ public class MyWaitNotify {
 		MyWaitNotify my = new MyWaitNotify();
 		for (int i = 0; i < 10; i++) {
 			new Thread(new Runnable() {
-				@Override
 				public void run() {
 					my.doWait();
 					my.doNotify();
